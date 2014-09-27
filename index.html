@@ -1,9 +1,39 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>
-      KickerSoundBoard
-    </title>
+	    <title>
+	      KickerSoundBoard
+	    </title>
+	    
+   	<script>
+		function wazaah(el) {
+			a = document.getElementById(el.getAttribute("data-soundfile"))
+
+			if(a.paused) {
+				a.play();
+				el.children[0].src = 'off.jpg';
+
+				setTimeout(function() {
+				    el.children[0].src = 'on.jpg';
+				}, Math.ceil(a.duration*1000));
+			}
+
+		}
+	</script>
+<style>
+
+a {
+padding: 0;
+margin: 0;
+}
+
+img {
+width: 24%;
+padding: 0;
+margin: 0;
+}
+
+</style>
   </head>
   <body>
         <div id='top-bar'>
@@ -12,14 +42,14 @@
           </h1>
         </div>
         <div id='buttons'>
-          	<a data-soundfile='Allezjongwatisdatoch' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>Allezjongwatisdatoch</a>
-          	<a data-soundfile='Allez_verdoeme' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>Allez_verdoeme</a>
-          	<a data-soundfile='Alsgeshotdoehetdantegoei' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>Alsgeshotdoehetdantegoei.</a>
-          	<a data-soundfile='Chewbacca_mongolenlach' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>Chewbacca_mongolenlach.</a>
-          	<a data-soundfile='maddoh_vieschanseke' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>maddoh_vieschanseke.</a>
-          	<a data-soundfile='moehahaha1' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>moehahaha1.</a>
-          	<a data-soundfile='Multiballll' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>Multiballll.</a>
-          	<a data-soundfile='Pikachu' onclick='document.getElementById(this.getAttribute("data-soundfile")).play()'>Pikachu.</a>
+          	<a data-soundfile='Allezjongwatisdatoch' onclick='wazaah(this)'><img src='on.jpg' alt='Allezjongwatisdatoch'/></a>
+          	<a data-soundfile='Allez_verdoeme' onclick='wazaah(this)'><img src='on.jpg' alt='Allez_verdoeme'/></a>
+          	<a data-soundfile='Alsgeshotdoehetdantegoei' onclick='wazaah(this)'><img src='on.jpg' alt='Alsgeshotdoehetdantegoei'/></a>
+          	<a data-soundfile='Chewbacca_mongolenlach' onclick='wazaah(this)'><img src='on.jpg' alt='Chewbacca_mongolenlach'/></a>
+          	<a data-soundfile='maddoh_vieschanseke' onclick='wazaah(this)'><img src='on.jpg' alt='maddoh_vieschanseke'/></a>
+          	<a data-soundfile='moehahaha1' onclick='wazaah(this)'><img src='on.jpg' alt='moehahaha1'/></a>
+          	<a data-soundfile='Multiballll' onclick='wazaah(this)'><img src='on.jpg' alt='Multiballll'/></a>
+          	<a data-soundfile='Pikachu' onclick='wazaah(this)'><img src='on.jpg' alt='Pikachu'/>.</a>
         </div>
 
 	<div id='preload'>
